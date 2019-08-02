@@ -33,7 +33,20 @@
 #include "../core/macros.h"
 #include "../core/millis_t.h"
 #include "Version.h"
-#include "../../Configuration.h"
+
+#if PRINTERVERSION==A5S
+    #include "../../Configuration_A5S.h"
+#else
+    #if PRINTERVERSION==A1
+        #include "../../Configuration_A1.h"
+    #else
+        #if PRINTERVERSION==A5
+            #include "../../Configuration_A5.h"
+        #else
+            #include "../../Configuration.h"
+        #endif
+    #endif
+#endif
 
 #include "Conditionals_LCD.h"
 #include HAL_PATH(../HAL, inc/Conditionals_LCD.h)
