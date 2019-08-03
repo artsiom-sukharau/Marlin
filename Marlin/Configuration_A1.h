@@ -79,7 +79,7 @@
 // ╚╝╚═╝╩ ╩└─┘┴└─└─┘┴└─┴ ┴╚  └─┘┴└─└─┘┴ ┴o└─┘└─┘┴ ┴
 
 #define STRING_CONFIG_H_AUTHOR "(Roberto Mariani & Samuel Pinches)" // Who made the changes.
-#define STRING_SPLASH_LINE1 "JG-A1 v2.0C (3/8/19)" // will be shown during bootup in line 1
+#define STRING_SPLASH_LINE1 "JG-A1 v2.0D (4/8/19)" // will be shown during bootup in line 1
 #define STRING_SPLASH_LINE2 "JGAuroraForum.com"         // will be shown during bootup in line 2
 
 /**
