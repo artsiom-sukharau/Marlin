@@ -34,16 +34,23 @@
 #include "../core/millis_t.h"
 #include "Version.h"
 
-#if PRINTERVERSION==A5S
+#if PRINTERMODELID == 1 // A5S
     #include "../../Configuration_A5S.h"
+    //#warning Building for A5S
+
 #else
-    #if PRINTERVERSION==A1
+    #if PRINTERMODELID == 2 // A1
         #include "../../Configuration_A1.h"
+            //#warning Building for A1
+
     #else
-        #if PRINTERVERSION==A5
+        #if PRINTERMODELID == 3 // A5
             #include "../../Configuration_A5.h"
+                //#warning Building for A5
+
         #else
             #include "../../Configuration.h"
+                #error Building for default platform - please set printer model id
         #endif
     #endif
 #endif
