@@ -50,11 +50,10 @@ def addboot(source,target,env):
 	firmware.close()
 	firmwareimage.close()
 	binfilename = printermodel+'_v'+buildnumber+'_'+lcd_language+'.bin' # file without bootloader
-	buildfolder = target[0].dir.path+'../../../' + binfilename
+	buildfolder = target[0].dir.path+'/'+ binfilename
 	if os.path.exists(buildfolder):
 		os.remove(buildfolder)
 	os.rename(target[0].path, buildfolder)
-	#os.rename(target[0].dir.path+'/firmware_with_bootloader.bin', target[0].dir.path+'/firmware.bin')
 
 env.AddPostAction("$BUILD_DIR/${PROGNAME}.bin", addboot);
 
