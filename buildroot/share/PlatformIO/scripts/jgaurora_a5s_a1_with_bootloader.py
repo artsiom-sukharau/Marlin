@@ -3,7 +3,7 @@ Import("env")
 my_flags = env.ParseFlags(env['BUILD_FLAGS'])
 #print(my_flags['CPPDEFINES'])
 for defines in my_flags['CPPDEFINES']:
-	try: 
+	try:
 			#print defines[0]
 			#print defines[1]
 			if defines[0]=='PRINTERMODEL':
@@ -14,7 +14,7 @@ for defines in my_flags['CPPDEFINES']:
 				buildnumber = defines[1]
 
 	except:
-		stillok = 1 
+		stillok = 1
 
 # Relocate firmware from 0x08000000 to 0x0800A000
 env['CPPDEFINES'].remove(("VECT_TAB_ADDR", "0x8000000"))
@@ -50,7 +50,9 @@ def addboot(source,target,env):
 	firmware.close()
 	firmwareimage.close()
 	binfilename = printermodel+'_v'+buildnumber+'_'+lcd_language+'.bin' # file without bootloader
-	buildfolder = target[0].dir.path+'../../../' + binfilename
+	#buildfolder = target[0].dir.path+'../../../' + binfilename
+	buildfolder = target[0].dir.path+'/' + binfilename # will generate firmware as .pioenvs/jgaurora_a5s_en/A5S_v2.0D_en.bin
+	print(buildfolder)
 	if os.path.exists(buildfolder):
 		os.remove(buildfolder)
 	os.rename(target[0].path, buildfolder)
