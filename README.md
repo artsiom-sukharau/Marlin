@@ -1,4 +1,7 @@
 ﻿# Marlin 3D Printer Firmware
+Please note, after compiling has finished, the compiled .bin firmware files will be found in the ".pioenvs/" folder, with a separate folder for each model and language.
+
+
 
 [![Build Status](https://travis-ci.org/MarlinFirmware/Marlin.svg?branch=bugfix-2.0.x)](https://travis-ci.org/MarlinFirmware/Marlin)
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)

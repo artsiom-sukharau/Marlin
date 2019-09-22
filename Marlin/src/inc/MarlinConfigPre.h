@@ -33,7 +33,27 @@
 #include "../core/macros.h"
 #include "../core/millis_t.h"
 #include "Version.h"
-#include "../../Configuration.h"
+
+#if PRINTERMODELID == 1 // A5S
+    #include "../../Configuration_A5S.h"
+    //#warning Building for A5S
+
+#else
+    #if PRINTERMODELID == 2 // A1
+        #include "../../Configuration_A1.h"
+            //#warning Building for A1
+
+    #else
+        #if PRINTERMODELID == 3 // A5
+            #include "../../Configuration_A5.h"
+                //#warning Building for A5
+
+        #else
+            #include "../../Configuration.h"
+                #error Building for default platform - please set printer model id
+        #endif
+    #endif
+#endif
 
 #include "Conditionals_LCD.h"
 #include HAL_PATH(../HAL, inc/Conditionals_LCD.h)
